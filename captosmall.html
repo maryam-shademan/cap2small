@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online text case converter tool - instantly convert between uppercase and lowercase with our stylish interface">
+    <meta name="keywords" content="uppercase letter, uppercase, lowercase, case letter, online text formatter, text capitalize">
+    <meta name="author" content="Text Converter Pro">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Text Case Converter | Uppercase & Lowercase Tool">
+    <meta property="og:description" content="Convert text between uppercase and lowercase instantly with our beautiful interface">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://captosmall.pages.dev">
+    <link rel="canonical" href="https://captosmall.pages.dev">
+    <title>Text Case Converter | Professional Uppercase & Lowercase Tool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-glow {
+            box-shadow: 0 10px 25px -5px rgba(118, 75, 162, 0.4);
+        }
+        .button-grow {
+            transition: all 0.3s ease;
+        }
+        .button-grow:hover {
+            transform: scale(1.05);
+        }
+        .text-area {
+            min-height: 150px;
+            transition: all 0.3s ease;
+        }
+        .text-area:focus {
+            box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.3);
+        }
+        .animate-bounce-in {
+            animation: bounceIn 0.5s;
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.9); opacity: 0; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="min-h-screen gradient-bg flex flex-col">
+    <header class="py-8 px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-3">Text Case Converter</h1>
+        <p class="text-xl text-white opacity-90 max-w-2xl mx-auto">Instantly transform your text between uppercase and lowercase with our beautiful, easy-to-use tool</p>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 pb-12 flex flex-col items-center">
+        <div class="w-full max-w-4xl bg-white rounded-xl p-6 md:p-8 shadow-2xl card-glow animate-bounce-in">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="input-text" class="block text-lg font-medium text-gray-800 mb-2">
+                        <i class="fas fa-keyboard mr-2 text-purple-600"></i>Your Text
+                    </label>
+                    <textarea id="input-text" class="w-full p-4 border-2 border-gray-200 rounded-lg text-area focus:border-purple-500 focus:outline-none" placeholder="Type or paste your text here..."></textarea>
+                    
+                    <div class="flex space-x-3 mt-4">
+                        <button id="to-upper" class="flex-grow button-grow bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition-all flex items-center justify-center">
+                            <i class="fas fa-arrow-up mr-2"></i> CAPITAL
+                        </button>
+                        <button id="to-lower" class="flex-grow button-grow bg-gray-800 hover:bg-black text-white font-bold py-3 px-4 rounded-lg transition-all flex items-center justify-center">
+                            <i class="fas fa-arrow-down mr-2"></i> small
+                        </button>
+                        <button id="clear-all" class="button-grow bg-white border-2 border-red-400 text-red-500 hover:bg-red-50 font-bold py-3 px-4 rounded-lg transition-all">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="output-text" class="block text-lg font-medium text-gray-800 mb-2">
+                        <i class="fas fa-file-alt mr-2 text-green-600"></i>Converted Text
+                    </label>
+                    <textarea id="output-text" readonly class="w-full p-4 border-2 border-gray-200 rounded-lg bg-gray-50 text-area" placeholder="Converted text will appear here..."></textarea>
+                    
+                    <div class="flex justify-end mt-4 space-x-2">
+                        <button id="copy-result" class="button-grow bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-all flex items-center justify-center">
+                            <i class="fas fa-copy mr-2"></i> Copy
+                        </button>
+                        <button id="download-txt" class="button-grow bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition-all flex items-center justify-center">
+                            <i class="fas fa-file-download mr-2"></i> Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-10 text-center max-w-3xl">
+            <h2 class="text-2xl font-bold text-white mb-4">How to Use Our Text Converter</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white bg-opacity-10 p-4 rounded-lg backdrop-blur-sm">
+                    <div class="text-3xl text-white mb-3"><i class="fas fa-keyboard"></i></div>
+                    <h3 class="text-white font-semibold mb-2">1. Enter Your Text</h3>
+                    <p class="text-white text-opacity-80">Type or paste your text into the input box on the left</p>
+                </div>
+                <div class="bg-white bg-opacity-10 p-4 rounded-lg backdrop-blur-sm">
+                    <div class="text-3xl text-white mb-3"><i class="fas fa-exchange-alt"></i></div>
+                    <h3 class="text-white font-semibold mb-2">2. Convert Case</h3>
+                    <p class="text-white text-opacity-80">Click either the "CAPITAL" or "small" button to change your text</p>
+                </div>
+                <div class="bg-white bg-opacity-10 p-4 rounded-lg backdrop-blur-sm">
+                    <div class="text-3xl text-white mb-3"><i class="fas fa-clipboard-check"></i></div>
+                    <h3 class="text-white font-semibold mb-2">3. Copy or Download</h3>
+                    <p class="text-white text-opacity-80">Use the buttons to copy results or download as a text file</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black bg-opacity-30 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="hover:text-purple-300"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" class="hover:text-purple-300"><i class="fab fa-facebook text-xl"></i></a>
+                <a href="#" class="hover:text-purple-300"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-purple-300"><i class="fab fa-github text-xl"></i></a>
+            </div>
+            <p class="text-sm text-white text-opacity-70">
+                &copy; 2023 Text Converter Pro. All rights reserved. 
+                <a href="#" class="hover:text-purple-300">Privacy Policy</a> | 
+                <a href="#" class="hover:text-purple-300">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputText = document.getElementById('input-text');
+            const outputText = document.getElementById('output-text');
+            const toUpperBtn = document.getElementById('to-upper');
+            const toLowerBtn = document.getElementById('to-lower');
+            const clearAllBtn = document.getElementById('clear-all');
+            const copyResultBtn = document.getElementById('copy-result');
+            const downloadTxtBtn = document.getElementById('download-txt');
+            
+            // Convert to uppercase
+            toUpperBtn.addEventListener('click', function() {
+                if (inputText.value.trim() === '') {
+                    showNotification('Please enter some text first!', 'error');
+                    return;
+                }
+                outputText.value = inputText.value.toUpperCase();
+                
+                // Animation effect
+                this.classList.add('animate-pulse');
+                setTimeout(() => this.classList.remove('animate-pulse'), 300);
+                showNotification('Text converted to UPPERCASE!', 'success');
+            });
+            
+            // Convert to lowercase
+            toLowerBtn.addEventListener('click', function() {
+                if (inputText.value.trim() === '') {
+                    showNotification('Please enter some text first!', 'error');
+                    return;
+                }
+                outputText.value = inputText.value.toLowerCase();
+                
+                // Animation effect
+                this.classList.add('animate-bounce');
+                setTimeout(() => this.classList.remove('animate-bounce'), 500);
+                showNotification('Text converted to lowercase!', 'success');
+            });
+            
+            // Clear all text
+            clearAllBtn.addEventListener('click', function() {
+                inputText.value = '';
+                outputText.value = '';
+                showNotification('Text cleared successfully!', 'info');
+                
+                // Animation effect
+                this.classList.add('rotate-180');
+                setTimeout(() => this.classList.remove('rotate-180'), 300);
+            });
+            
+            // Copy result
+            copyResultBtn.addEventListener('click', function() {
+                if (outputText.value.trim() === '') {
+                    showNotification('Nothing to copy!', 'error');
+                    return;
+                }
+                
+                navigator.clipboard.writeText(outputText.value)
+                    .then(() => {
+                        showNotification('Copied to clipboard!', 'success');
+                        this.innerHTML = '<i class="fas fa-check mr-2"></i> Copied!';
+                        setTimeout(() => {
+                            this.innerHTML = '<i class="fas fa-copy mr-2"></i> Copy';
+                        }, 2000);
+                    })
+                    .catch(err => {
+                        showNotification('Failed to copy text!', 'error');
+                        console.error('Failed to copy text: ', err);
+                    });
+                
+                // Animation effect
+                this.classList.add('bg-blue-800');
+                setTimeout(() => this.classList.remove('bg-blue-800'), 300);
+            });
+            
+            // Download as TXT file
+            downloadTxtBtn.addEventListener('click', function() {
+                if (outputText.value.trim() === '') {
+                    showNotification('Nothing to download!', 'error');
+                    return;
+                }
+                
+                const blob = new Blob([outputText.value], {type: 'text/plain'});
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'converted-text.txt';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                
+                showNotification('Download started!', 'success');
+                
+                // Animation effect
+                this.classList.add('scale-90');
+                setTimeout(() => this.classList.remove('scale-90'), 300);
+            });
+            
+            // Show notification function
+            function showNotification(message, type) {
+                const notification = document.createElement('div');
+                notification.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg text-white font-medium ${type === 'error' ? 'bg-red-500' : type === 'success' ? 'bg-green-500' : 'bg-blue-500'} animate-bounce-in`;
+                notification.textContent = message;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.classList.add('opacity-0', 'translate-x-full');
+                    setTimeout(() => notification.remove(), 300);
+                }, 3000);
+            }
+            
+            // Input text grows as user types
+            inputText.addEventListener('input', function() {
+                if (this.value.length > 0) {
+                    this.style.height = 'auto';
+                    this.style.height = (this.scrollHeight) + 'px';
+                } else {
+                    this.style.height = '150px';
+                }
+            });
+            
+            // Add ripple effect to buttons
+            document.querySelectorAll('button').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const x = e.clientX - e.target.getBoundingClientRect().left;
+                    const y = e.clientY - e.target.getBoundingClientRect().top;
+                    
+                    const ripple = document.createElement('span');
+                    ripple.className = 'absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-0 h-0 rounded-full opacity-40';
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
+                    ripple.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+                    
+                    this.appendChild(ripple);
+                    
+                    const maxSize = Math.max(this.offsetWidth, this.offsetHeight) * 2;
+                    ripple.style.width = `${maxSize}px`;
+                    ripple.style.height = `${maxSize}px`;
+                    
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
